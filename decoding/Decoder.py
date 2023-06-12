@@ -47,7 +47,7 @@ class Decoder:
         av = AltViterbi(hmm=self.hmm, obs=self.obs.observations)
         decoded = av.decode()
 
-        self.__write(title='REAL OBSERVATION')
+        self.__write(title='REAL SEQUENCE OF STATES')
         self.fhandle.write('\n{}\n\n'.format(self.true_seq))
         self.__write(title='DECODED')
         dec_perc = self.true_seq[self.true_seq == decoded].size / self.true_seq.size * 100
